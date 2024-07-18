@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container-fluid">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.jpg" alt="logo" />
+                <div class="header-text">
+                    <h2>Admin</h2>
+                    <h2>Dashboard</h2>
+                </div>
+            </div>
+            <ul class="sidebar-links">
+                <li>
+                    <a href="tteacher.php">
+                        <span class="material-symbols-outlined"> person </span>Teachers</a>
+                </li>
+                <li>
+                    <a href="aadmin.php">
+                        <span class="material-symbols-outlined"> person </span>Admin</a>
+                </li>
+                <li>
+                    <a href="sstudent.php">
+                        <span class="material-symbols-outlined">
+                            Person
+                        </span>
+                        Students</a>
+                </li>
+
+                <h4>
+                    <span>Account</span>
+                    <div class="menu-separator"></div>
+                </h4>
+                <li>
+                    <a href="logout.php" onclick="return confirmLogout()"><span class="material-symbols-outlined">
+                            logout </span>Logout</a>
+                </li>
+            </ul>
+            <div class="user-account">
+                <div class="user-profile">
+                    <img src="" alt="Profile Image" />
+                    <div class="user-detail">
+                        <h3></h3>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main content -->
+        <div class="col-md-9" id="mainContent">
+
+        </div>
+    </div>
+</body>
+</html>
