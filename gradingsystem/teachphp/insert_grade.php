@@ -1,5 +1,5 @@
 <?php
-include '../conn.php'; // Adjust the path as needed
+include 'databaseconnect/conn.php'; // Adjust the path as needed
 
 // Get the form data
 $category = $_POST['category'];

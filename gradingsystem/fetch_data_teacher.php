@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include('conn.php');
+include('databaseconnect/conn.php');
 
 // Check if the grade level is set
 if (isset($_POST['grade'])) {

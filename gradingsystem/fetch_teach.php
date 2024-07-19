@@ -1,5 +1,5 @@
 <?php
-include 'conn.php'; // Include your database connection file
+include 'databaseconnect/conn.php'; // Include your database connection file
 
 $sql = "SELECT t.user_id, t.fname, t.mname, t.lname, t.ename, t.age, t.gender, t.address, 
                GROUP_CONCAT(s.subject_name SEPARATOR ', ') AS subjects 

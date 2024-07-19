@@ -10,7 +10,7 @@ if ($_SESSION['role'] !== 'admin') {
 
 <body>
 
-<?php include 'body.php'; ?>
+<?php include 'html/body.php'; ?>
 
     
 <script src="js/addoptions.js"></script>

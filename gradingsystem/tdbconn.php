@@ -1,7 +1,7 @@
 <?php
 // tdbconn.php
 
-include 'conn.php';
+include 'databaseconnect/conn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fname = $_POST["fname"];

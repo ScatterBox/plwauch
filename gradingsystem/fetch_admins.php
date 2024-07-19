@@ -1,5 +1,5 @@
 <?php
-include 'conn.php'; // Include your database connection file
+include 'databaseconnect/conn.php'; // Include your database connection file
 
 $sql = "SELECT user_id, fname, mname, lname, ename, 
                age, 

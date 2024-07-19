@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include('conn.php');
+include('databaseconnect/conn.php');
 
 // SQL query to fetch data from the students table
 $sql = "SELECT s.user_id, s.fname, s.mname, s.lname, s.ename, s.age, s.gender, s.birthdate, s.address, 

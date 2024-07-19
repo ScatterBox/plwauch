@@ -53,8 +53,8 @@ function showNewClass() {
 }
 
 function showClasses() {
-var mainContent = document.getElementById('mainContent');
-mainContent.innerHTML = `
+    var mainContent = document.getElementById('mainContent');
+    mainContent.innerHTML = `
 <style>
     h1 { margin-top: 20px; }
     .smaller-table { font-size: 0.8em; width: 80%; margin: auto; }
@@ -80,19 +80,19 @@ mainContent.innerHTML = `
 </table>
 `;
 
-var xhr = new XMLHttpRequest();
-xhr.open('POST', 'teachphp/fetch_classes.php', true);
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-xhr.send('created_by=' + <?php echo $_SESSION['user']['user_id']; ?>);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'teachphp/fetch_classes.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('created_by=' + <? php echo $_SESSION['user']['user_id']; ?>);
 
-xhr.onload = function () {
-if (this.status == 200) {
-    var classes = JSON.parse(this.responseText);
-    var tbody = document.querySelector('#classTable tbody');
+    xhr.onload = function () {
+        if (this.status == 200) {
+            var classes = JSON.parse(this.responseText);
+            var tbody = document.querySelector('#classTable tbody');
 
-    for (var i = 0; i < classes.length; i++) {
-        var tr = document.createElement('tr');
-        tr.innerHTML = `
+            for (var i = 0; i < classes.length; i++) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = `
             <th scope="row">${i + 1}</th>
             <td>${classes[i].subject_name}</td>
             <td>${classes[i].year_level}</td>
@@ -104,39 +104,39 @@ if (this.status == 200) {
                 <button class="btn btn-success set-grading-btn" data-id="${classes[i].subject_id}">Set Grading</button>
             </td>
         `;
-        tbody.appendChild(tr);
-    }
-
-    $('#classTable').DataTable();
-
-    document.querySelectorAll('.delete-btn').forEach(button => {
-        button.addEventListener('click', function () {
-            var subjectId = this.getAttribute('data-id');
-            if (confirm('Are you sure you want to delete this class?')) {
-                deleteClass(subjectId);
+                tbody.appendChild(tr);
             }
-        });
-    });
 
-    document.querySelectorAll('.set-grading-btn').forEach(button => {
-        button.addEventListener('click', function () {
-            var subjectId = this.getAttribute('data-id');
-            window.location.href = 'setgrade.php?subject_id=' + subjectId;
-        });
-    });
+            $('#classTable').DataTable();
 
-    document.querySelectorAll('.view-btn').forEach(button => {
-        button.addEventListener('click', function () {
-            var yearLevel = this.getAttribute('data-year_level');
-            var section = this.getAttribute('data-section');
-            var subject = this.getAttribute('data-subject');
-            viewStudents(yearLevel, section, subject);
-        });
-    });
-}
-};
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    var subjectId = this.getAttribute('data-id');
+                    if (confirm('Are you sure you want to delete this class?')) {
+                        deleteClass(subjectId);
+                    }
+                });
+            });
 
-document.getElementById('addClassBtn').addEventListener('click', showNewClass);
+            document.querySelectorAll('.set-grading-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    var subjectId = this.getAttribute('data-id');
+                    window.location.href = 'setgrade.php?subject_id=' + subjectId;
+                });
+            });
+
+            document.querySelectorAll('.view-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    var yearLevel = this.getAttribute('data-year_level');
+                    var section = this.getAttribute('data-section');
+                    var subject = this.getAttribute('data-subject');
+                    viewStudents(yearLevel, section, subject);
+                });
+            });
+        }
+    };
+
+    document.getElementById('addClassBtn').addEventListener('click', showNewClass);
 }
 
 
